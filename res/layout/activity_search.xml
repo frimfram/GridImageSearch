@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context="com.codepath.frimfram.gridimagesearch.activities.SearchActivity" >
+
+    <com.etsy.android.grid.StaggeredGridView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/gvResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        app:grid_paddingLeft="5dp"
+        app:grid_paddingTop="20dp"
+        app:item_margin="15dp"
+        app:column_count_portrait="3"
+        app:column_count_landscape="4" />
+    
+    <ImageView 
+        android:src="@drawable/iconemptyimages"
+        android:id="@+id/imgGridEmpty"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/app_name"
+        android:layout_width="256dp"
+        android:layout_height="256dp" />
+
+</RelativeLayout>
