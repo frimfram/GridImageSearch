@@ -41,6 +41,7 @@ public class SearchActivity extends FragmentActivity implements OnFragmentIntera
 	private StaggeredGridView gvResults;
 	private ArrayList<ImageResult> imageResults;
 	private ImageResultsAdapter aImageResults;
+	private EndlessScrollListener scrollListener;
 	
 	private  JsonHttpResponseHandler jsonResponseHandler;
 	private ArrayList<Integer> startPositions;
@@ -93,6 +94,7 @@ public class SearchActivity extends FragmentActivity implements OnFragmentIntera
 					
 					imageResultsJson = resultsJson.getJSONArray("results");
 					if(currentPageIndex == 0) {
+						scrollListener.reset();
 						aImageResults.clear(); //when it's a new search 
 					}
 					aImageResults.addAll(ImageResult.fromJSONArray(imageResultsJson));
@@ -109,9 +111,9 @@ public class SearchActivity extends FragmentActivity implements OnFragmentIntera
 	    				Toast.LENGTH_LONG).show();
 			}
         	
-        };    	
-    	
-    	gvResults.setOnScrollListener(new EndlessScrollListener(0,5){
+        };  
+        
+        scrollListener = new EndlessScrollListener(){
 
 			@Override
 			public void onLoadMore(int page, int totalItemsCount) {
@@ -124,7 +126,9 @@ public class SearchActivity extends FragmentActivity implements OnFragmentIntera
 				}
 			}
     		
-    	});
+    	};
+    	
+    	gvResults.setOnScrollListener(scrollListener);
     	
     }
     
@@ -212,6 +216,7 @@ public class SearchActivity extends FragmentActivity implements OnFragmentIntera
     
     private void startNewImageSearch() {
         currentPageIndex = -1;
+        lastPageRequested = -1;
         startPositions = null;
         currentQuery = searchView.getQuery().toString();
         makeDataLoadRequest();    	

@@ -2,7 +2,7 @@ package com.codepath.frimfram.gridimagesearch.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.util.Patterns;
@@ -10,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Spinner;
 
 import com.codepath.frimfram.gridimagesearch.R;
@@ -62,18 +64,32 @@ public class FilterDialog extends DialogFragment implements OnClickListener {
 		if (getArguments() != null) {
 			mFilter = getArguments().getParcelable(ARG_PARAM1);
 		}
+		setStyle(STYLE_NORMAL, R.style.Dialog_Imagesearch);
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		getDialog().setTitle(R.string.advanced_filters);
+
 		// Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.fragment_filter_dialog, container,
 				false);
 		spImageSize = (Spinner)view.findViewById(R.id.spImageSize);
+		ArrayAdapter adapter = ArrayAdapter.createFromResource(this.getActivity(), R.array.image_sizes_array, R.layout.spinner_item);
+		adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+		spImageSize.setAdapter(adapter);
+		
 		spColor = (Spinner)view.findViewById(R.id.spColorFilter);
+		ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this.getActivity(), R.array.color_filter_array, R.layout.spinner_item);
+		adapter2.setDropDownViewResource(R.layout.spinner_dropdown_item);
+		spColor.setAdapter(adapter2);
+		
 		spImageType = (Spinner)view.findViewById(R.id.spImageType);
+		ArrayAdapter adapter3 = ArrayAdapter.createFromResource(this.getActivity(), R.array.image_type_array, R.layout.spinner_item);
+		adapter3.setDropDownViewResource(R.layout.spinner_dropdown_item);
+		spImageType.setAdapter(adapter3);
+		
 		etSite = (EditText)view.findViewById(R.id.etSiteFilterUri);	
 		saveButton = (Button)view.findViewById(R.id.btnSave);
 		cancelButton = (Button)view.findViewById(R.id.btnCancel);
@@ -84,8 +100,19 @@ public class FilterDialog extends DialogFragment implements OnClickListener {
 			spColor.setSelection(mFilter.getImageColorIndex());
 			spImageType.setSelection(mFilter.getImageType());
 			etSite.setText(mFilter.getSite());
-		}		
+		}
+		
 		return view;
+	}
+	
+	@Override
+	public void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		//apply custom styles
+		int contentId = Resources.getSystem().getIdentifier("content", "id", "android");
+		FrameLayout contentView = (FrameLayout)getDialog().findViewById(contentId);
+		contentView.setBackgroundColor(getResources().getColor(R.color.translucent_light_teal));
 	}
 
 	@Override

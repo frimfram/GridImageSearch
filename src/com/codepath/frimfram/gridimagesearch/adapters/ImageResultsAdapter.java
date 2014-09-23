@@ -17,6 +17,10 @@ import com.codepath.frimfram.gridimagesearch.models.ImageResult;
 import com.squareup.picasso.Picasso;
 
 public class ImageResultsAdapter extends ArrayAdapter<ImageResult> {
+	
+	private static class ViewHolder {
+		ImageView ivImage;
+	}
 
 	public ImageResultsAdapter(Context context, List<ImageResult> objects) {
 		super(context, R.layout.item_image_result, objects);
@@ -26,21 +30,31 @@ public class ImageResultsAdapter extends ArrayAdapter<ImageResult> {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ImageResult imageInfo = getItem(position);
+		
+		ViewHolder viewHolder;
 		if (convertView == null) {
+			viewHolder = new ViewHolder();
 			convertView = LayoutInflater.from(getContext()).inflate(
 					R.layout.item_image_result, parent, false);
+			viewHolder.ivImage = (ImageView)convertView.findViewById(R.id.ivImage);
+			convertView.setTag(viewHolder);
+		}else{
+			viewHolder = (ViewHolder)convertView.getTag();
+
 		}
+		
+		//calculate new image size
 		DisplayMetrics metrics = getContext().getResources().getDisplayMetrics();
 		int screenWidth = metrics.widthPixels;
 		long estimatedGridWidth = (screenWidth / 3);
 		int tbWidth = imageInfo.tbWidth;
 		int tbHeight = imageInfo.tbHeight;
 		int maxHeight = ((int)estimatedGridWidth * tbHeight)/tbWidth + 20;
-		ImageView ivImage = (ImageView)convertView.findViewById(R.id.ivImage);
-		ivImage.setImageResource(0);
-		ivImage.setMaxHeight(maxHeight);
 		
-		Picasso.with(getContext()).load(imageInfo.thumbUrl).into(ivImage);
+		viewHolder.ivImage.setImageResource(0);
+		viewHolder.ivImage.setMaxHeight(maxHeight);
+		
+		Picasso.with(getContext()).load(imageInfo.thumbUrl).into(viewHolder.ivImage);
 		return convertView;
 	}
 }

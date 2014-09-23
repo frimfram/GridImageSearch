@@ -90,8 +90,13 @@ containing a value of this type.
         public static final int item_margin=0x7f010003;
     }
     public static final class color {
-        public static final int background=0x7f080000;
-        public static final int gridbackground=0x7f080001;
+        public static final int background=0x7f050005;
+        public static final int gray=0x7f050004;
+        public static final int gridbackground=0x7f050006;
+        public static final int light_gray=0x7f050003;
+        public static final int opaque_red=0x7f050000;
+        public static final int translucent_light_teal=0x7f050002;
+        public static final int translucent_red=0x7f050001;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -101,8 +106,8 @@ containing a value of this type.
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
         public static final int ab_background_textured_imagesearch=0x7f020000;
@@ -172,6 +177,8 @@ containing a value of this type.
         public static final int fragment_filter_dialog=0x7f030003;
         public static final int item_image_result=0x7f030004;
         public static final int list_item_header_footer=0x7f030005;
+        public static final int spinner_dropdown_item=0x7f030006;
+        public static final int spinner_item=0x7f030007;
     }
     public static final class menu {
         public static final int image_display=0x7f090000;
@@ -179,34 +186,34 @@ containing a value of this type.
         public static final int settings=0x7f090002;
     }
     public static final class string {
-        public static final int action_settings=0x7f060001;
-        public static final int advanced_filters=0x7f060009;
-        public static final int app_name=0x7f060000;
-        public static final int cancel=0x7f06000f;
-        public static final int color_filter=0x7f06000b;
-        public static final int error_loading_image=0x7f060014;
-        public static final int hello_blank_fragment=0x7f060012;
-        public static final int image_desc=0x7f060005;
-        public static final int image_result_content=0x7f060007;
-        public static final int image_size=0x7f06000a;
-        public static final int image_title=0x7f060004;
-        public static final int image_type=0x7f06000c;
-        public static final int invalid_site_url=0x7f060011;
-        public static final int network_failed=0x7f060013;
-        public static final int network_not_available=0x7f060010;
-        public static final int save=0x7f06000e;
-        public static final int search_label=0x7f060003;
-        public static final int search_prompt=0x7f060002;
-        public static final int share=0x7f060015;
-        public static final int site_filter=0x7f06000d;
-        public static final int title_activity_image_display=0x7f060006;
-        public static final int title_activity_settings=0x7f060008;
+        public static final int action_settings=0x7f070001;
+        public static final int advanced_filters=0x7f070009;
+        public static final int app_name=0x7f070000;
+        public static final int cancel=0x7f07000f;
+        public static final int color_filter=0x7f07000b;
+        public static final int error_loading_image=0x7f070014;
+        public static final int hello_blank_fragment=0x7f070012;
+        public static final int image_desc=0x7f070005;
+        public static final int image_result_content=0x7f070007;
+        public static final int image_size=0x7f07000a;
+        public static final int image_title=0x7f070004;
+        public static final int image_type=0x7f07000c;
+        public static final int invalid_site_url=0x7f070011;
+        public static final int network_failed=0x7f070013;
+        public static final int network_not_available=0x7f070010;
+        public static final int save=0x7f07000e;
+        public static final int search_label=0x7f070003;
+        public static final int search_prompt=0x7f070002;
+        public static final int share=0x7f070015;
+        public static final int site_filter=0x7f07000d;
+        public static final int title_activity_image_display=0x7f070006;
+        public static final int title_activity_settings=0x7f070008;
     }
     public static final class style {
-        public static final int ActionBar_Solid_Imagesearch=0x7f070003;
-        public static final int ActionBar_Transparent_Imagesearch=0x7f070004;
-        public static final int ActionBarTabStyle_Imagesearch=0x7f070007;
-        public static final int ActionButton_CloseMode_Imagesearch=0x7f07000a;
+        public static final int ActionBar_Solid_Imagesearch=0x7f080003;
+        public static final int ActionBar_Transparent_Imagesearch=0x7f080004;
+        public static final int ActionBarTabStyle_Imagesearch=0x7f080007;
+        public static final int ActionButton_CloseMode_Imagesearch=0x7f08000a;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -228,19 +235,20 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int DropDownListView_Imagesearch=0x7f070006;
-        public static final int DropDownNav_Imagesearch=0x7f070008;
-        public static final int PopupMenu_Imagesearch=0x7f070005;
-        public static final int ProgressBar_Imagesearch=0x7f070009;
-        public static final int Theme_Imagesearch=0x7f070002;
+        public static final int AppTheme=0x7f080001;
+        public static final int Dialog_Imagesearch=0x7f08000c;
+        public static final int DropDownListView_Imagesearch=0x7f080006;
+        public static final int DropDownNav_Imagesearch=0x7f080008;
+        public static final int PopupMenu_Imagesearch=0x7f080005;
+        public static final int ProgressBar_Imagesearch=0x7f080009;
+        public static final int Theme_Imagesearch=0x7f080002;
         /**  this style is only referenced in a Light.DarkActionBar based theme 
          */
-        public static final int Theme_Imagesearch_Widget=0x7f07000b;
+        public static final int Theme_Imagesearch_Widget=0x7f08000b;
     }
     public static final class styleable {
         /** Attributes that can be used with a StaggeredGridView.

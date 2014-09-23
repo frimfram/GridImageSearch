@@ -17,7 +17,7 @@
      limitations under the License.
 -->
 
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="Theme.Imagesearch" parent="@android:style/Theme.Holo.Light">
         <item name="android:actionBarItemBackground">@drawable/selectable_background_imagesearch</item>
@@ -76,5 +76,11 @@
         <item name="android:popupMenuStyle">@style/PopupMenu.Imagesearch</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Imagesearch</item>
     </style>
+    <style name="Dialog.Imagesearch" parent="@android:style/Theme.Holo.Dialog">
+    	<item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorForeground">#fff</item>
+	</style>
 
 </resources>

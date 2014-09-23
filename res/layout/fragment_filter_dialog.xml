@@ -23,8 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/spImageType"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:entries="@array/image_sizes_array" />
+        android:layout_alignParentTop="true" />
 
     <TextView
         android:id="@+id/tvColorFilter"
@@ -42,8 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/spImageType"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/tvImageSizeLabel"
-        android:entries="@array/color_filter_array" />
+        android:layout_below="@+id/tvImageSizeLabel" />
 
     <TextView
         android:id="@+id/tvImageType"
@@ -62,8 +60,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/tvColorFilter"
         android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/tvImageType"
-        android:entries="@array/image_type_array" />
+        android:layout_toRightOf="@+id/tvImageType" />
 
     <TextView
         android:id="@+id/textView1"
@@ -83,6 +80,8 @@
         android:layout_below="@+id/spImageType"
         android:layout_alignLeft="@+id/spImageType"
         android:layout_alignParentRight="true"
+        android:textColor="#333333"
+        android:textSize="16sp"
         android:ems="10"
         android:inputType="textUri" >
 
