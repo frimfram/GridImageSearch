@@ -31,8 +31,8 @@ Hours spent: 25 hours
 
 animated gif:
 
-![Alt text](https://github.com/frimfram/InstagramViewer/blob/master/imagesearcher_project.gif "Image Searching")
+![Alt text](https://github.com/frimfram/GridImageSearch/blob/master/imagesearcher_project.gif "Image Searching")
 
-![Alt text](https://github.com/frimfram/InstagramViewer/blob/master/imagesearcher_project2.gif "Network Not Available")
+![Alt text](https://github.com/frimfram/GridImageSearch/blob/master/imagesearcher_project2.gif "Network Not Available")
 
 
